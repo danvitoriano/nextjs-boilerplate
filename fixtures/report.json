@@ -1,0 +1,933 @@
+{
+	"startTime": "2019-03-12T16:40:04.592Z",
+	"endTime": "2019-03-12T16:51:53.083Z",
+	"userAgents": ["Firefox 65.0.0 / Ubuntu 0.0.0"],
+	"passed": 102,
+	"total": 115,
+	"skipped": 1,
+	"fixtures": [
+		{
+			"name": "Conclusion tests - Happy flow",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/conclusion-tests/conclusion-happy-flow.js",
+			"tests": [
+				{
+					"name": "Deve exibir os dados de conclusão de acordo com os dados do pedido",
+					"errs": [],
+					"durationMs": 2,
+					"screenshotPath": null,
+					"skipped": true
+				}
+			]
+		},
+		{
+			"name": "Payment exception flows - Charge address",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-exception-flows/charge-address.js",
+			"tests": [
+				{
+					"name": "Deve liberar os campos de endereço para digitação quando o serviço de CEP estiver indisponível",
+					"errs": [],
+					"durationMs": 3340,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir no campo de cidade os 60 caracteres iniciais quando digitar mais de 60 caracteres",
+					"errs": [],
+					"durationMs": 5138,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve bloquear a inserção de caracteres especiais no campo cidade",
+					"errs": [],
+					"durationMs": 3449,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando campo cidade estiver vazio",
+					"errs": [],
+					"durationMs": 2665,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando for removido conteúdo do campo cidade",
+					"errs": [],
+					"durationMs": 3611,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve remover alerta quando for inserido valor válido no campo cidade",
+					"errs": [],
+					"durationMs": 3070,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando campo estado estiver vazio",
+					"errs": [],
+					"durationMs": 2985,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando remover conteúdo do campo estado",
+					"errs": [],
+					"durationMs": 3215,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve remover alerta quando for inserido valor válido no campo estado",
+					"errs": [],
+					"durationMs": 3001,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment exception flows - Credit card",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-exception-flows/credit-card.js",
+			"tests": [
+				{
+					"name": "Deve ser possível selecionar uma bandeira quando o serviço Data Fortress estiver indisponível",
+					"errs": [],
+					"durationMs": 4348,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser possível selecionar uma bandeira, e alterá-la, quando o serviço Data Fortress estiver indisponível",
+					"errs": [],
+					"durationMs": 7045,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment happy flow - Credit card payment",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-happy-flows/creditcard-payment.js",
+			"tests": [
+				{
+					"name": "Deve bloquear por causa dos alerts, enviar a requisição, mas permanecer na mesma tela",
+					"errs": [],
+					"durationMs": 17719,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Cart",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/cart.js",
+			"tests": [
+				{
+					"name": "Deve exibir o campo de frete com valor correto",
+					"errs": [
+						"AssertionError: expected 'R$ 1,00' to include '10,00'\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   11 |    .beforeEach(async () => {\n   12 |\t\tawait waitForReact();\n   13 |\t});\n   14 |\n   15 |test('Deve exibir ocampo de frete com valor correto', async t => {\n > 16 |\tawait t.expect(payment.shippingValue.innerText).contains('10,00');\n   17 |});\n   18 |\n   19 |test('Deve exibir o campo de frete com valor superior a 0', async t => {\n   20|\tvar length = await payment.shippingValue.innerText;\n   21 |\tif (parseInt(length.replace(/[^\\d.-]/g, '')) <= 0)\n\n   at contains (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/cart.js:16:50)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/cart.js:15:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 4938,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir o campo de frete com valor superior a 0",
+					"errs": [],
+					"durationMs": 1252,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir os itens do carrinho com valores esperados",
+					"errs": [
+						"AssertionError: expected 'Produto PagSeguroI' to include 'Descrição do item 1'\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   25 |test('Deve exibir os itens do carrinho com valores esperados', async t => {\n   26 |    const length = await payment.cartItems.count;\n   27 |\tfor (var i = 0; i < length; i++) {\n   28 |\t\tawait t\n   29 |\t\t\t.expect(payment.itemText(i).innerText)\n > 30 |\t\t\t.contains(listItems[i].description)\n   31 |\t\t\t.expect(payment.itemQuantity(i).innerText)\n   32 |\t\t\t.contains(listItems[i].quantity)\n   33 |\t\t\t.expect(payment.itemPrice(i).innerText)\n   34 |\t\t\t.contains(listItems[i].amount.replace('.', ','));\n   35 |\t}\n\n   at contains (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/cart.js:30:5)"
+					],
+					"durationMs": 5061,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Charge address",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/charge-address.js",
+			"tests": [
+				{
+					"name": "Deve exibir os campos do outro endereço de cobrança com estado correto após inserção do CEP",
+					"errs": [],
+					"durationMs": 3364,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir os campos do outro endereço de cobrança com estado correto após inserção de CEP genérico",
+					"errs": [],
+					"durationMs": 3639,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir no campo de endereço os 160 caracteres iniciais ao digitar mais de 160 caracteres",
+					"errs": [],
+					"durationMs": 8881,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir a inserção de caracteres especiais no campo endereço",
+					"errs": [],
+					"durationMs": 3448,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando campo endereço estiver vazio",
+					"errs": [],
+					"durationMs": 2926,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando remover conteúdo do campo endereço",
+					"errs": [],
+					"durationMs": 4486,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve remover alerta quando preencher valor válido no campo endereço",
+					"errs": [],
+					"durationMs": 4985,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir no campo número os 20 caracteres iniciais ao digitar mais de 20 caracteres",
+					"errs": [],
+					"durationMs": 3908,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir a inserção de caracteres especiais no campo número",
+					"errs": [],
+					"durationMs": 3427,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando campo número ficar vazio",
+					"errs": [],
+					"durationMs": 2991,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta no campo número quando remover o conteúdo",
+					"errs": [],
+					"durationMs": 4117,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve remover alerta quando preencher valor válido no campo número",
+					"errs": [],
+					"durationMs": 3570,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir no campo complemento os 40 caracteres iniciais ao digitar mais de 40 caracteres",
+					"errs": [],
+					"durationMs": 4883,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir inserção de caracteres especiais no campo complemento",
+					"errs": [],
+					"durationMs": 4774,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser validado campo complemento como não obrigatório",
+					"errs": [],
+					"durationMs": 3772,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir no campo bairro os 60 caracteres iniciais ao digitar mais de 60 caracteres",
+					"errs": [],
+					"durationMs": 5100,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir a inserção de caracteres especiais no campo bairro",
+					"errs": [],
+					"durationMs": 3931,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando campo bairro ficar vazio",
+					"errs": [],
+					"durationMs": 2943,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta quando remover conteúdo do campo bairro",
+					"errs": [],
+					"durationMs": 4095,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve remover alerta quando preencher valor válido no campo bairro",
+					"errs": [],
+					"durationMs": 3982,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Credit card",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/credit-card.js",
+			"tests": [
+				{
+					"name": "Deve permitir inserção de 16 dígitos numéricos no campo número do cartão",
+					"errs": [],
+					"durationMs": 2278,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir inserção de dígitos não numéricos no campo número do cartão",
+					"errs": [],
+					"durationMs": 2299,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir máscara correta quando inserir cartão da bandeira Diners no campo número do cartão",
+					"errs": [],
+					"durationMs": 4758,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir máscara correta quando inserir cartão da bandeira Amex no campo número do cartão",
+					"errs": [],
+					"durationMs": 3562,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir mensagem de erro ao inserir cartão de crédito de bandeira não aceita",
+					"errs": [],
+					"durationMs": 3569,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir mensagem de alerta quando manter conteúdo do campo de número de cartão de crédito vazio ou incompleto",
+					"errs": [],
+					"durationMs": 1802,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir mensagem de erro quando digitar no campo de número do cartão menos que seis dígitos ou mais que seis porém menor que o necessário",
+					"errs": [],
+					"durationMs": 2325,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve desaparecer a mensagem de erro quando preencho com um cartão válido",
+					"errs": [],
+					"durationMs": 2970,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir as principais bandeiras de cartão de crédito ao lado do campo de número do cartão",
+					"errs": [],
+					"durationMs": 1749,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve permitir inserção de 4 caracteres no campo código de segurança quando o cartão for Amex",
+					"errs": [],
+					"durationMs": 4362,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve permitir inserção de 3 caracteres no campo código de segurança quando o cartão for não Amex",
+					"errs": [],
+					"durationMs": 3429,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve aceitar somente números no campo código de segurança",
+					"errs": [],
+					"durationMs": 4436,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exigir 4 dígitos no campo código de segurança quando para cartões Amex",
+					"errs": [],
+					"durationMs": 3806,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve desaparecer a mensagem de erro quando preencho com código de segurança válido",
+					"errs": [],
+					"durationMs": 4192,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve apagar dados do campo código de segurança quando apagar do campo número do cartão",
+					"errs": [],
+					"durationMs": 4657,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve existir o recurso informativo para o campo código de segurança",
+					"errs": [],
+					"durationMs": 22561,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser possível selecionar uma bandeira quando o cartão digitado não seja reconhecido",
+					"errs": [],
+					"durationMs": 4117,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser possível selecionar uma bandeira, e alterá-la, quando o cartão digitado não seja reconhecido",
+					"errs": [],
+					"durationMs": 6564,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Installments",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/installments.js",
+			"tests": [
+				{
+					"name": "Deve exibir mensagem de erro quando usuário clicar no campo, não selecionar alguma parcela e clicar em algum outro elemento",
+					"errs": [],
+					"durationMs": 4460,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir mensagem de erro quando usuário clicar no campo e não selecionar alguma parcela e clicar em Finalizar compra",
+					"errs": [],
+					"durationMs": 5357,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser exibidos Title, placeholder e mensagem de informação do Parcelamento",
+					"errs": [],
+					"durationMs": 1228,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve voltar para o valor padrão sem seleção o campo Parcelamento quando for alterado o cartão",
+					"errs": [],
+					"durationMs": 5605,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser exibidos valores no campo Parcelamento conforme configurado para o vendedor no Gerenciador",
+					"errs": [
+						"AssertionError: expected '1x de R$ 255,97 = R$ 255,97 sem acréscimo' to include '1x de R$ 306,00 = R$ 306,00 sem acréscimo'\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   106 |    \t)\n   107 |\t\t.click(payment.installmentSelect);\n   108 |\tfor (var i = 1; i < length; i++) {\n   109 |\t\tawait t\n   110 |\t\t\t.expect(payment.installmentOptionsSelect(i).innerText)\n > 111 |\t\t\t.contains(testData.INSTALLMENTS_DEFAULT_306_3X[i - 1]);\n   112 |\t}\n   113 |});\n   114 |\n\n   at contains (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/installments.js:111:5)"
+					],
+					"durationMs": 7657,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Others",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/others.js",
+			"tests": [
+				{
+					"name": "Deve ser exibida frase: \"Pagamento processado pelo PagSeguro.\" link Saiba Mais",
+					"errs": [],
+					"durationMs": 1839,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Owner credit card",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/owner-credit-card.js",
+			"tests": [
+				{
+					"name": "Devem ser apagados os valores dos campos Nome impresso no cartão, CPF e Celular quando clicar em Limpar os dados do dono do cartão",
+					"errs": [],
+					"durationMs": 3889,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir a mensagem de erro quando digitar CPF do dono do cartão com valor inválido e retirar o foco do campo",
+					"errs": [],
+					"durationMs": 2276,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitos 11 caracteres numéricos válidos no campo CPF",
+					"errs": [],
+					"durationMs": 2085,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitos somente caracteres numéricos no campo CPF",
+					"errs": [],
+					"durationMs": 18410,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ter como tamanho máximo 11 caracteres o campo CPF",
+					"errs": [],
+					"durationMs": 2476,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir mensagem de alerta quando o campo CPF não for preenchido",
+					"errs": [],
+					"durationMs": 1665,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta após remover o valor válido do campo CPF",
+					"errs": [],
+					"durationMs": 2575,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve remover o alerta após inserir valor válido de CPF",
+					"errs": [],
+					"durationMs": 2770,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta de conteúdo inválido do campo CPF",
+					"errs": [],
+					"durationMs": 2373,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir alerta após inserir valor de CPF menor que o esperado",
+					"errs": [],
+					"durationMs": 2112,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser removido o alerta de valor inválido após preenchimento correto do campo CPF",
+					"errs": [],
+					"durationMs": 13236,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser permitidos oito caracteres numéricos no campo Data de Nascimento ",
+					"errs": [],
+					"durationMs": 1984,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitos somente caracteres numéricos no campo Data de Nascimento",
+					"errs": [],
+					"durationMs": 17712,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ter como tamanho máximo 8 caracteres o campo Data de Nascimento",
+					"errs": [],
+					"durationMs": 2347,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitos somente dias dentro do intervalo de 01 a 31 no campo Data de nascimento",
+					"errs": [],
+					"durationMs": 3217,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitos somente meses dentro do intervalo de 01 a 12 no campo Data de nascimento",
+					"errs": [],
+					"durationMs": 3060,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve ser aceito valor de ano superior ao ano corrente no campo Data de Nascimento",
+					"errs": [],
+					"durationMs": 2060,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser aceito somente valor de ano menor que o ano corrente no campo Data de Nascimento",
+					"errs": [],
+					"durationMs": 2244,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve ser aceito valor com  diferença entre o ano corrente  e o ano digitado que seja menor que 12 no campo Data de nascimento",
+					"errs": [],
+					"durationMs": 2012,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitas datas bissextas no campo Data de Nascimento",
+					"errs": [],
+					"durationMs": 2166,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser aceito o dia 29/02 somente em anos bissextos no campo Data de Nascimento",
+					"errs": [],
+					"durationMs": 2374,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve ser exibita a mensagem de erro quando o campo de Data de Nascimento não permanecer vazio",
+					"errs": [],
+					"durationMs": 3182,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser exibita a mensagem de alerta quando o campo de Data de Nascimento permanecer vazio",
+					"errs": [],
+					"durationMs": 1941,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve ser exibida a mensagem de alerta quando o campo de Data de Nascimento não permanecer vazio",
+					"errs": [],
+					"durationMs": 2411,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitos 11 caracteres numéricos válidos, sendo apresentados com a máscara, no campo Celular",
+					"errs": [],
+					"durationMs": 2306,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Devem ser aceitos somente caracteres numéricos no campo Celular",
+					"errs": [],
+					"durationMs": 30291,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve aceitar no máximo 11 caracteres no campo Celular",
+					"errs": [],
+					"durationMs": 2282,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir a mensagem de alerta quando o campo Celular não for preenchido",
+					"errs": [],
+					"durationMs": 1746,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir o alerta após remover o valor válido do campo Celular",
+					"errs": [],
+					"durationMs": 2424,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir a mensagem de erro quando inserir um valor menor que o esperado no campo Celular",
+					"errs": [],
+					"durationMs": 2720,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir a mensagem de erro quando inserir um valor inválido no campo Celular",
+					"errs": [],
+					"durationMs": 2218,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser removida a mensagem de erro quando preencher o campo Celular com valor válido",
+					"errs": [],
+					"durationMs": 3844,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve aceitar todos os DDDs válidos no campo Celular",
+					"errs": [],
+					"durationMs": 88852,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve aceitar nenhum dos DDDs inválidos no campo Celular",
+					"errs": [],
+					"durationMs": 44006,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve remover o alerta após inserir valor válido no campo Celular",
+					"errs": [],
+					"durationMs": 2524,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Sender data",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/sender-data.js",
+			"tests": [
+				{
+					"name": "Deve exibir a palavra \"Olá, \" e o email do comprador enviado pelo OrderService",
+					"errs": [],
+					"durationMs": 1282,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve redirecionar para paǵina de autenticação no monolito quando clicar no link Editar",
+					"errs": [
+						"AssertionError: expected 'https://pagseguro.uol.com.br/checkout/error.jhtml' to include 'https://pagseguro.uol.com.br/checkout/nc/sender-login.jhtml?t='\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   23 |\n   24 |test('Deve redirecionar para paǵina de autenticação no monolito quando clicar no link Editar', async t => {\n   25 |    await t\n   26 |\t\t.click(payment.editEmail())\n   27 |\t\t.expect(getPageUrl())\n > 28 |\t\t.contains(constants.CHECKOUT_LOGIN_URL);\n   29 |});\n   30 |\n   31 |test('Deve exibir a frase \"Você receberá as notificações sobre o fluxo de processamento do seu pedido no e-mail acima\"', async t => {\n   32 |\tawait t\n   33 |\t\t.expect(payment.personal().innerText)\n\n   at contains (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/sender-data.js:28:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/sender-data.js:24:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 5299,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir a frase \"Você receberá as notificações sobre o fluxo de processamento do seu pedido no e-mail acima\"",
+					"errs": [],
+					"durationMs": 1440,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir a frase \"Faça login para usar os dados de entrega e formas de pagamento (Carteira e Saldo PagSeguro).\"",
+					"errs": [],
+					"durationMs": 1255,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve redirecionar para a página de autenticação no monolito quando clicar em Faça login",
+					"errs": [
+						"AssertionError: expected 'https://pagseguro.uol.com.br/checkout/error.jhtml' to include 'https://pagseguro.uol.com.br/checkout/nc/sender-login.jhtml?t='\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   42 |\n   43 |test('Deve redirecionar para a página de autenticação no monolito quando clicar em Faça login', async t => {\n   44 |    await t\n   45 |\t\t.click(payment.loginEmail())\n   46 |\t\t.expect(getPageUrl())\n > 47 |\t\t.contains(constants.CHECKOUT_LOGIN_URL);\n   48 |});\n   49 |\n   50 |test('Deve exibir mensagem de erro quando preencher apenas primeiro nome no campo Nome Completo', async t => {\n   51 |\tawait t\n   52 |\t\t.typeText(payment.fullNameInput, testData.INVALID_NAME)\n\n   at contains (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/sender-data.js:47:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/sender-data.js:43:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 5152,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir mensagem de erro quando preencher apenas primeiro nome no campo Nome Completo",
+					"errs": [],
+					"durationMs": 1912,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir o valor correto no campo Nome Completo",
+					"errs": [],
+					"durationMs": 2425,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve exibir a mensagem de erro quando digitar CPF inválido e retirar o foco do campo",
+					"errs": [],
+					"durationMs": 2152,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Payment other flows - Shipping address",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js",
+			"tests": [
+				{
+					"name": "Deve exibir corretamente os dados de endereço de entrega",
+					"errs": [
+						"AssertionError: expected 'Av. PagSeguro' to include 'AVENIDA BRIGADEIRO FARIA LIMA'\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   15 |    });\n   16 |\n   17 |test('Deve exibir corretamente os dados de endereço de entrega', async t => {\n   18 |\tawait t\n   19 |\t\t.expect(payment.shippingStreet.value)\n > 20 |\t\t.contains(shippingAddress.shippingAddressStreet)\n   21 |\t\t.expect(payment.shippingNumber.value)\n   22 |\t\t.contains(shippingAddress.shippingAddressNumber)\n   23 |\t\t.expect(payment.shippingComplement.value)\n   24 |\t\t.contains(shippingAddress.shippingAddressComplement)\n   25 |\t\t.expect(payment.shippingDistrict.value)\n\n   at contains (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:20:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:17:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 4946,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir que campo Endereço de Entrega > Número aceite mais que 20 caracteres",
+					"errs": [
+						"AssertionError: expected '9999' to deeply equal 'String com mais do q'\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   34 |\n   35 |test('Não deve permitir que campo Endereço de Entrega > Número aceite mais que 20 caracteres', async t => {\n   36 |    await t\n   37 |\t\t.typeText(payment.shippingNumber, testData.STRING_GREATER_THAN_20_CHARS)\n   38 |\t\t.expect(payment.shippingNumber.value)\n > 39 |\t\t.eql(testData.STRING_GREATER_THAN_20_CHARS.substr(0, 20));\n   40 |});\n   41 |\n   42 |test('Deve ser obrigatório campo Endereço de Entrega > Número', async t => {\n   43 |\tawait t\n   44 |\t\t.click(payment.creditCardSubmitBtn)\n\n   at eql (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:39:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:35:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 15203,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve ser obrigatório campo Endereço de Entrega > Número",
+					"errs": [
+						"Cannot obtain information about the node because the specified selector does not match any node in the DOM tree.\n\n > | Selector('#shipping-street p')\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   41 |\n   42 |test('Deve ser obrigatório campo Endereço de Entrega > Número', async t => {\n   43 |    await t\n   44 |\t\t.click(payment.creditCardSubmitBtn)\n   45 |\t\t.expect(payment.shippingNumberRequiredMsg.innerText)\n > 46 |\t\t.eql(testData.SHIPPING_NUMBER_REQUIRED_MSG)\n   47 |\t\t.typeText(payment.shippingNumber, testData.STRING_GREATER_THAN_20_CHARS)\n   48 |\t\t.expect(payment.shippingNumberRequiredMsg.exists)\n   49 |\t\t.notOk()\n   50 |\t\t.pressKey('ctrl+a . delete')\n   51 |\t\t.click(payment.shippingComplement)\n\n   at eql (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:46:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:42:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 12084,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir que campo Endereço de Entrega > Complemento aceite mais que 40 caracteres",
+					"errs": [
+						"AssertionError: expected '99o andar' to deeply equal 'String com mais do que 40 caracteres 123'\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   58 |    \t.typeText(\n   59 |\t\t\tpayment.shippingComplement,\n   60 |\t\t\ttestData.STRING_GREATER_THAN_40_CHARS\n   61 |\t\t)\n   62 |\t\t.expect(payment.shippingComplement.value)\n > 63 |\t\t.eql(testData.STRING_GREATER_THAN_40_CHARS.substr(0, 40));\n   64 |});\n   65 |\n   66 |test('Não deve permitir quecampo Endereço de Entrega > Número aceite caracteres especiais', async t => {\n   67 |\tawait t\n   68 |\t\t.typeText(payment.shippingNumber, testData.ESPECIAL_CHARS)\n\n   at eql (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:63:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:56:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 15516,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir que campo Endereço de Entrega > Número aceite caracteres especiais",
+					"errs": [
+						"AssertionError: expected '9999' to deeply equal ''\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   65 |\n   66 |test('Não deve permitir que campo Endereço de Entrega > Número aceite caracteres especiais', async t => {\n 67 |    await t\n   68 |\t\t.typeText(payment.shippingNumber, testData.ESPECIAL_CHARS)\n   69 |\t\t.expect(payment.shippingNumber.value)\n > 70 |\t\t.eql('');\n   71 |});\n   72 |\n   73 |test('Não deve permitir que campo Endereço de Entrega > Complemento aceite caracteres especiais', async t => {\n   74 |\tawait t\n   75 |\t\t.typeText(payment.shippingComplement, testData.ESPECIAL_CHARS)\n\n   at eql (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:70:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:66:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 15212,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Não deve permitir que campo Endereço de Entrega > Complemento aceite caracteres especiais",
+					"errs": [
+						"AssertionError: expected '99o andar' to deeply equal ''\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   72 |\n   73 |test('Não deve permitir que campo Endereço de Entrega > Complemento aceite caracteres especiais', asynct => {\n   74 |    await t\n   75 |\t\t.typeText(payment.shippingComplement, testData.ESPECIAL_CHARS)\n   76 |\t\t.expect(payment.shippingComplement.value)\n > 77 |\t\t.eql('');\n   78 |});\n   79 |\n   80 |test('Deve redirecionar para site dos correios ao clicar em link Pesquisar em Dados da entrega', async t => {\n   81 |\tawait t\n   82 |\t\t.click(payment.shippingSearchLink)\n\n   at eql (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:77:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/payment-tests/payment-other-flows/shipping-address.js:73:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 15275,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "Deve redirecionar para site dos correios ao clicar em link Pesquisar em Dados da entrega",
+					"errs": [],
+					"durationMs": 9636,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Redirect tests - Happy flow",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/redirect-tests/redirect-happy-flow.js",
+			"tests": [
+				{
+					"name": "@skipInProd Deve redirecionar usuário para a URL da página de identificação sender-identification quando o vendedor não informar um comprador",
+					"errs": [],
+					"durationMs": 2324,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "@skipInProd Deve redirecionar usuário para a URL da página de identificação sender-login quando o vendedor informar um comprador cadastrado na base",
+					"errs": [],
+					"durationMs": 9762,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "@skipInProd Deve redirecionar usuário para o Payment Collector quando o vendedor informar um comprador que não esteja cadastrado na base",
+					"errs": [
+						"AssertionError: expected 'https://pagseguro.uol.com.br/checkout/nc/sender-data-payment-methods.jhtml?t=40a00423dcf852dc475a65afc33c39e7545fc80a4e421797#rmcl' to include 'https://pagamento.pagseguro.uol.com.br'\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   54 |    \t\t`${\n   55 |\t\t\t\tconstants.PAYMENT_URL\n   56 |\t\t\t}${checkoutCodeWithUnregisteredSenderEmail}${constants.RMCL_HASH}`\n   57 |\t\t)\n   58 |\t\t.expect(getPageUrl())\n > 59 |\t\t.contains(constants.PAYMENT_COLLECTOR_URL);\n   60 |});\n   61 |\n\n   at contains (/home/lvpereira/workspace/payment-collector-e2e/tests/redirect-tests/redirect-happy-flow.js:59:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/redirect-tests/redirect-happy-flow.js:51:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 9130,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		},
+		{
+			"name": "Redirect tests - Other flows",
+			"path": "/home/lvpereira/workspace/payment-collector-e2e/tests/redirect-tests/redirect-other-flows.js",
+			"tests": [
+				{
+					"name": "@skipInProd Deve exibir o Parcelamento conforme enviado pela requisição da API",
+					"errs": [
+						"The specified selector does not match any element in the DOM tree.\n\n   | Selector('input')\n > |   .withAttribute('name', 'creditCard.credit_card_number')\n\nBrowser: Firefox 65.0.0 / Ubuntu 0.0.0\n\n   40 |    \t.navigateTo(\n   41 |\t\t\t`${\n   42 |\t\t\t\tconstants.PAYMENT_URL\n   43 |\t\t\t}${checkoutCodeWithUnregisteredSenderEmail}${constants.RMCL_HASH}`\n   44 |\t\t)\n > 45 |\t\t.typeText(\n   46 |\t\t\tpayment.creditCardNumberInput,\n   47 |\t\t\ttestData.CREDIT_CARDS_LIST.MASTERCARD\n   48 |\t\t)\n   49 |\t\t.click(payment.installmentSelect);\n   50 |\tfor (var i = 1; i < length; i++) {\n\n   at typeText (/home/lvpereira/workspace/payment-collector-e2e/tests/redirect-tests/redirect-other-flows.js:45:4)\n   at test (/home/lvpereira/workspace/payment-collector-e2e/tests/redirect-tests/redirect-other-flows.js:36:1)\n   at markeredfn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:17:28)\n   at <anonymous> (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/api/wrap-test-function.js:7:5)\n   at fn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:239:19)\n   at TestRun._executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:235:38)\n   at _executeTestFn (/home/lvpereira/workspace/payment-collector-e2e/node_modules/testcafe/src/test-run/index.js:284:24)"
+					],
+					"durationMs": 17034,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "@skipInProd Não deve redirecionar para o Payment Collector quando vendedor estiver na whitelist, usuário comprador for guest, mas o frete total for igual a 0.00",
+					"errs": [],
+					"durationMs": 4847,
+					"screenshotPath": null,
+					"skipped": false
+				},
+				{
+					"name": "@skipInProd Não deve redirecionar para o Payment Collector quando vendedor estiver na whitelist, usuário comprador for guest, mas o frete total for null",
+					"errs": [],
+					"durationMs": 4580,
+					"screenshotPath": null,
+					"skipped": false
+				}
+			]
+		}
+	],
+	"warnings": []
+}
