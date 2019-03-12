@@ -6,7 +6,11 @@ Projeto base para o *"PagSeguro Digital Payments presents: React Challenge"*
 
 Queremos exibir os resultados dos testes end-to-end em uma página customizada.
 
-* A aplicação deve consumir o JSON que estará `fixtures/report.json`. Nele contêm todos os resultados dos testes, sucesso, erros e outras informações.
+* A aplicação deve consumir o JSON que está no endpoint `http://localhost:9000/api/report`. Nele contêm todos os resultados dos testes, sucesso, erros e outras informações.
+
+## Layout
+
+Temos um exemplo de layout em `layout/example.html`, não precisa necessariamente ser da mesma forma, é apenas para se basear.
 
 ## Requisitos
 
@@ -18,11 +22,7 @@ Queremos exibir os resultados dos testes end-to-end em uma página customizada.
 
 ```
 npm install
-npm run dev
+npm run local
 ```
 
-O projeto irá rodar em `localhost:3002`
-
-## Layout
-
-Temos um exemplo de layout em `layout/example.html`, não precisa necessariamente ser da mesma forma, é apenas para se basear.
+O projeto irá rodar em `localhost:9000`
