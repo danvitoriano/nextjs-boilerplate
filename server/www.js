@@ -4,6 +4,9 @@ const { createServer: createServerHttp } = require('http');
 const app = require('express')();
 const next = require('next');
 
+const REPORT = require('./routes/report');
+
+app.use(REPORT);
 app.get('/health-check', (req, res) =>
 	res.status(200).json({
 		status: 'OK'
