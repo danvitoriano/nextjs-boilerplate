@@ -1,7 +1,7 @@
 {
-  "name": "testcafe-reports",
+  "name": "nextjs-boilerplate",
   "version": "0.0.1",
-  "description": "Visual report to show success and errors of testcafe tests suite",
+  "description": "React, Redux and Next JS Boilerplate",
   "main": "index.js",
   "scripts": {
     "next": "next",

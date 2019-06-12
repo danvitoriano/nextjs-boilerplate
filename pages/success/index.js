@@ -10,7 +10,7 @@ class Page extends PureComponent {
 		return (
 			<>
 				<Head title="Success" />
-				<Layout>Exibir os testes de sucesso! :)</Layout>
+				<Layout>Success Page</Layout>
 			</>
 		);
 	}
